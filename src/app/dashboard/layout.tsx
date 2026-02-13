@@ -1,0 +1,22 @@
+import { AppSidebar } from "@/components/layout/app-sidebar"
+import { MobileNav } from "@/components/layout/mobile-nav"
+
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <div className="flex min-h-screen bg-background text-foreground overflow-hidden">
+      <AppSidebar />
+      <MobileNav />
+      <main className="flex-1 overflow-y-auto h-screen relative">
+        {/* Background Gradients for Dashboard */}
+        <div className="fixed inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-900/20 via-background to-background pointer-events-none" />
+        <div className="container mx-auto p-6 md:p-12 mb-24 md:mb-20">
+            {children}
+        </div>
+      </main>
+    </div>
+  )
+}
